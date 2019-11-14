@@ -10,6 +10,7 @@ padding:20px 0px;
 display:flex;
 justify-content:space-around;
 min-width:100%;
+position:fixed;
 `
 const Logo = styled.span`
 text-shadow: 2px 0px #fff;
