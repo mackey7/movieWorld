@@ -1,9 +1,9 @@
 import React from 'react';
-
+import { TopNav } from '../../components/TopNav/TopNav'
 export const HomePage = () => {
     return (
         <div>
-            homepage
-    </div>
+            <TopNav />
+        </div>
     )
 }
