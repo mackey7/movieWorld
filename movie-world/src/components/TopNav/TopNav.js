@@ -1,6 +1,6 @@
 import React from "react"
 import styled from 'styled-components'
-
+import { SearchBar } from '../../components/SearchBar/SearchBar'
 const TopNavWrapper = styled.nav`
 background:#384b55;
 padding:20px 0px;
@@ -15,6 +15,8 @@ export const TopNav = () => {
     return (
         <TopNavWrapper>
             <Logo>Movie Word</Logo>
+            <SearchBar />
+
         </TopNavWrapper>
     )
 }
