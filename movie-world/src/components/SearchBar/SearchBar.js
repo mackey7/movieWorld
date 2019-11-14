@@ -5,6 +5,7 @@ const Input = styled.input`
 border-color:  #000;
 border-width: 1px 1px 1px 1px;
 padding:7px 20px;
+width:350px;
 `
 
 const Button = styled.button`
