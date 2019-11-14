@@ -16,7 +16,6 @@ export const TopNav = () => {
         <TopNavWrapper>
             <Logo>Movie Word</Logo>
             <SearchBar />
-
         </TopNavWrapper>
     )
 }
