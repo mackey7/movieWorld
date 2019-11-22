@@ -34,7 +34,7 @@ export const TopNav = () => {
                 <Logo>Movie Word</Logo>
                 <SearchBar />
             </div>
-            <Fav to="/fav"><i class="fas fa-heart"></i></Fav>
+            <Fav to="/Favourite"><i class="fas fa-heart"></i></Fav>
 
 
         </TopNavWrapper>
