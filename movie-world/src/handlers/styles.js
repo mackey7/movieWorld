@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
-export const SimpleRow = styled.div`
-display:flex;
-align-items:center;
-`
+// export const SimpleRow = styled.div`
+// display:flex;
+// align-items:center;
+// `

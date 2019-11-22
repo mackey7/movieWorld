@@ -1,7 +1,7 @@
 import React from "react"
 import styled from 'styled-components'
-import { SearchBar } from '../../components/SearchBar/SearchBar'
-import { SimpleRow } from '../../handlers/styles'
+import { SearchBar } from '../SearchBar/SearchBar'
+// import { SimpleRow } from '../../handlers/styles'
 import { Link } from 'react-router-dom'
 
 const TopNavWrapper = styled.nav`
@@ -30,10 +30,10 @@ color:#e50d0d;
 export const TopNav = () => {
     return (
         <TopNavWrapper>
-            <SimpleRow>
+            <div>
                 <Logo>Movie Word</Logo>
                 <SearchBar />
-            </SimpleRow>
+            </div>
             <Fav to="/fav"><i class="fas fa-heart"></i></Fav>
 
 

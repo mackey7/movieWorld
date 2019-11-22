@@ -18,10 +18,7 @@ cursor:pointer;
 font-weight:700;
 &:hover{
 background:#ebedf0;
-
 }
-
-
 `
 export const SearchBar = () => {
     return (
