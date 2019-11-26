@@ -9,7 +9,19 @@ export const Footer = () => {
 
     return (
 
-        <FooterWrapper> footer </FooterWrapper>
+        <FooterWrapper>
+            <div>
+                Movie World
+
+            </div>
+            <div>
+                <i className="fab fa-twitter"></i>
+                <i className="fab fa-facebook"></i>
+
+            </div>
+
+
+        </FooterWrapper>
 
     )
 }
