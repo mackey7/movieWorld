@@ -3,6 +3,7 @@ import { TopNav } from '../../components/TopNav/TopNav'
 import { Footer } from '../../components/Footer/Footer'
 import { Header } from '../../components/Header/Header'
 import { HomePageCategories } from '../../containers/HomePageCategories/HomePageCategories'
+
 export const HomePage = () => {
     return (
         <div>

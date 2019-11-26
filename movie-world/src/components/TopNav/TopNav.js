@@ -9,8 +9,8 @@ background:#384b55;
 padding:20px 0px;
 display:flex;
 justify-content:space-around;
-min-width:100%;
-position:fixed;
+width:100%;
+
 `
 const Logo = styled.span`
 text-shadow: 2px 0px #fff;
@@ -35,8 +35,6 @@ export const TopNav = () => {
                 <SearchBar />
             </SimpleRow>
             <Fav to="/Favourite"><i class="fas fa-heart"></i></Fav>
-
-
         </TopNavWrapper>
     )
 }
