@@ -8,12 +8,13 @@ min-width:100%;
 `
 
 const FooterWrapper = Styled.div`
-width:100%;
+margin:0 auto;
+width:80%;
 color:#fff;
 display:flex;
-justify-content: space-around;
-align-items:center;
+justify-content: space-between;
 `
+
 const Logo = Styled.span`
 font-size:30px;
 font-weight:900;
@@ -28,7 +29,6 @@ cursor:pointer;
 &:hover{
     color:#fff;
 }
-
 `
 export const Footer = () => {
 

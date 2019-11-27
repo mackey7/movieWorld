@@ -4,6 +4,11 @@ import { CategorySlider } from '../../components/CategorySlider/CategorySlider'
 
 export const HomePageCategories = () => {
     return (
-        <CategorySlider />
+        <div>
+            <CategorySlider CategoryTitle={"Trending"} />
+            <CategorySlider CategoryTitle={"Trending"} />
+            <CategorySlider CategoryTitle={"Trending"} />
+            <CategorySlider CategoryTitle={"Trending"} />
+        </div>
     )
 }
