@@ -1,9 +1,10 @@
 import React from 'react'
 import { Slide } from './Slide'
 export const Slides = () => {
+    const arr = [1]
     return (
         <div>
-            dd
+            {arr.map(x => <Slide />)}
         </div>
     )
 }
