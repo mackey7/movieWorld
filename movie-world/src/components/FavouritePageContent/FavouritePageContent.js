@@ -1,6 +1,6 @@
 import React from 'react'
 import Styled from 'styled-components'
-
+import { FavouritePageMovieItem } from '../FavouritePageMovieItem/FavouritePageMovieItem'
 const Wrapper = Styled.section`
 min-height:100vh;
 background:#111617;
@@ -20,7 +20,7 @@ export const FavouritePageContent = () => {
     return (
         <Wrapper>
             <MainWrapper>
-                FavouritePageContent
+                <  FavouritePageMovieItem />
             </MainWrapper>
 
         </Wrapper>
