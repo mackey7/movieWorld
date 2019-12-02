@@ -18,6 +18,7 @@ font-size:40px;
 font-weight:900;
 color:#3d7895;
 margin-right:10px;
+text-decoration:none;
 `
 const Fav = styled(Link)`
 font-size:40px;
@@ -31,7 +32,9 @@ export const TopNav = () => {
     return (
         <TopNavWrapper>
             <SimpleRow>
-                <Logo>Movie Word</Logo>
+                <Link to="/">
+                    <Logo>Movie Word</Logo>
+                </Link>
                 <SearchBar />
             </SimpleRow>
             <Fav to="/Favourite"><i class="fas fa-heart"></i></Fav>
