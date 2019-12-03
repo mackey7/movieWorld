@@ -10,12 +10,35 @@ background-position:center;
 background-size: 100% 100vh; 
 
 `
+const Icon = Styled.i`
+color:#fff;
+font-size:40px;
+cursor: pointer;
+`
+
+const HeaderContent = Styled.div`
+width:80%;
+margin:0 auto;
+min-height:100vh;
+display:flex;
+justify-content:space-between;
+flex-direction:column;
+`
 
 export const MovieItemHeader = () => {
+    const historyBack = () => {
+        window.history.back();
+    }
     return (
         <Wrapper>
-
-            MovieItemHeader
+            <HeaderContent>
+                <div>
+                    <Icon onClick={historyBack} className="fas fa-chevron-left"></Icon>
+                </div>
+                <div>
+                    ddd
+                </div>
+            </HeaderContent>
         </Wrapper>
     )
 }
