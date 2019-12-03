@@ -11,8 +11,9 @@ background-size: 100% 100vh;
 
 `
 const Icon = Styled.i`
+margin-top:70px;
 color:#fff;
-font-size:40px;
+font-size:60px;
 cursor: pointer;
 `
 
@@ -25,6 +26,21 @@ justify-content:space-between;
 flex-direction:column;
 `
 
+const HeaderContentBottom = Styled.div`
+margin-bottom:10px;
+display:flex;
+justify-content:space-between;
+`
+
+const HeartIcon = Styled.i`
+color:#fff;
+font-size:60px;
+cursor: pointer;
+&:hover{
+    color:#ca2e2e;
+}
+`
+
 export const MovieItemHeader = () => {
     const historyBack = () => {
         window.history.back();
@@ -35,9 +51,14 @@ export const MovieItemHeader = () => {
                 <div>
                     <Icon onClick={historyBack} className="fas fa-chevron-left"></Icon>
                 </div>
-                <div>
-                    ddd
-                </div>
+                <HeaderContentBottom>
+                    <div>
+
+                    </div>
+
+                    <HeartIcon className="fas fa-heart"></HeartIcon>
+
+                </HeaderContentBottom>
             </HeaderContent>
         </Wrapper>
     )
