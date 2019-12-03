@@ -30,6 +30,7 @@ const HeaderContentBottom = Styled.div`
 margin-bottom:10px;
 display:flex;
 justify-content:space-between;
+align-items:flex-end;
 `
 
 const HeartIcon = Styled.i`
@@ -40,6 +41,21 @@ cursor: pointer;
     color:#ca2e2e;
 }
 `
+const MoviePoster = Styled.img`
+width:140px;
+`
+const MovieDetailsContainer = Styled.div`
+display:flex;
+align-items:center;
+`
+const MovieDetails = Styled.div`
+display:flex;
+flex-direction:column;
+margin-left:30px;
+color:#fff;
+`
+
+
 
 export const MovieItemHeader = () => {
     const historyBack = () => {
@@ -52,9 +68,19 @@ export const MovieItemHeader = () => {
                     <Icon onClick={historyBack} className="fas fa-chevron-left"></Icon>
                 </div>
                 <HeaderContentBottom>
-                    <div>
+                    <MovieDetailsContainer>
 
-                    </div>
+                        <MoviePoster src="https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg" />
+
+                        <MovieDetails>
+                            <h2> Frozen II</h2>
+                            <span> 7.1</span>
+                            <span> Relased | EN</span>
+                            <span> Animation | Family</span>
+                        </MovieDetails>
+
+
+                    </MovieDetailsContainer>
 
                     <HeartIcon className="fas fa-heart"></HeartIcon>
 
