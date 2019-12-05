@@ -1,5 +1,6 @@
 import React from 'react'
 import Styled from 'styled-components'
+import { Animated } from "react-animated-css";
 
 const FooterContainer = Styled.footer`
 background: #131517;
@@ -35,14 +36,18 @@ export const Footer = () => {
     return (
         <FooterContainer>
             <FooterWrapper>
-                <Logo>
-                    Movie World
+                <Animated animationIn="bounceInLeft" >
+                    <Logo>
+                        Movie World
 
                 </Logo>
-                <div>
-                    <Icon className="fab fa-twitter"></Icon>
-                    <Icon className="fab fa-facebook"></Icon>
-                </div>
+                </Animated>
+                <Animated animationIn="bounceInRight" >
+                    <div>
+                        <Icon className="fab fa-twitter"></Icon>
+                        <Icon className="fab fa-facebook"></Icon>
+                    </div>
+                </Animated>
 
             </FooterWrapper>
         </FooterContainer>
