@@ -1,5 +1,6 @@
 import React from 'react'
 import Styled from 'styled-components'
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const Title = Styled.h2`
 text-transform:uppercase;
@@ -54,24 +55,43 @@ export const MovieItemCast = () => {
             <Wrapper>
                 <Title>Cast</Title>
                 <CaruselWrapper>
-                    <Icon className="fas fa-chevron-left"></Icon>
-
+                    <ScrollAnimation animateIn="fadeInLeft" animateOnce={true} delay={1} >
+                        <Icon className="fas fa-chevron-left"></Icon>
+                    </ScrollAnimation>
                     <CaruselSection>
-                        <MovieItem>
-                            <Img src="https://image.tmdb.org/t/p/w185/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg" />
-                            <span> Jack Black</span>
-                        </MovieItem>
-                        <MovieItem>
-                            <Img src="https://image.tmdb.org/t/p/w185/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg" />
-                            <span> Jack Black</span>
-                        </MovieItem>
-                        <MovieItem>
-                            <Img src="https://image.tmdb.org/t/p/w185/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg" />
-                            <span> Jack Black</span>
-                        </MovieItem>
-                    </CaruselSection>
+                        <ScrollAnimation animateIn="bounceInDown" animateOnce={true}>
+                            <MovieItem>
+                                <Img src="https://image.tmdb.org/t/p/w185/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg" />
+                                <span> Jack Black</span>
+                            </MovieItem>
+                        </ScrollAnimation>
 
-                    <Icon className="fas fa-chevron-right"></Icon>
+                        <ScrollAnimation animateIn="bounceInDown" animateOnce={true}>
+                            <MovieItem>
+                                <Img src="https://image.tmdb.org/t/p/w185/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg" />
+                                <span> Jack Black</span>
+                            </MovieItem>
+                        </ScrollAnimation>
+
+                        <ScrollAnimation animateIn="bounceInDown" animateOnce={true}>
+                            <MovieItem>
+                                <Img src="https://image.tmdb.org/t/p/w185/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg" />
+                                <span> Jack Black</span>
+                            </MovieItem>
+                        </ScrollAnimation>
+
+                        <ScrollAnimation animateIn="bounceInDown" animateOnce={true}>
+                            <MovieItem>
+                                <Img src="https://image.tmdb.org/t/p/w185/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg" />
+                                <span> Jack Black</span>
+                            </MovieItem>
+                        </ScrollAnimation>
+
+
+                    </CaruselSection>
+                    <ScrollAnimation animateIn="fadeInRight" animateOnce={true} delay={1} >
+                        <Icon className="fas fa-chevron-right"></Icon>
+                    </ScrollAnimation>
                 </CaruselWrapper>
             </Wrapper>
         </WrapperSection>
