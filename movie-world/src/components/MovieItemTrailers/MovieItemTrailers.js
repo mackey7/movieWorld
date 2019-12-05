@@ -1,5 +1,6 @@
 import React from 'react'
 import Styled from 'styled-components'
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const WrapperSection = Styled.section`
 background:#161130;
@@ -28,17 +29,21 @@ export const MovieItemTrailers = () => {
     return (
         <WrapperSection>
             <Wrapper>
-                <Title>
-                    TRAILERS
+                <ScrollAnimation animateIn="bounceInLeft" animateOnce={true}>
+                    <Title>
+                        TRAILERS
                 </Title>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="bounceInLeft" animateOnce={true}>
+                    <MovieSection>
 
-                <MovieSection>
+                        <iframe width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
+                        <iframe width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
+                        <iframe width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
 
-                    <iframe width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
-                    <iframe width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
-                    <iframe width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
+                    </MovieSection>
+                </ScrollAnimation>
 
-                </MovieSection>
             </Wrapper>
         </WrapperSection >
     )

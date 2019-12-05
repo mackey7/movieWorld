@@ -1,7 +1,10 @@
 import React from 'react'
 import Styled from 'styled-components'
 
-const Title = Styled.h2``
+const Title = Styled.h2`
+text-transform:uppercase;
+letter-spacing: 4px;`
+
 const WrapperSection = Styled.section`
 color:#fff;
 background:#161130;
@@ -22,6 +25,8 @@ display:flex;
 `
 const Icon = Styled.i`
 color:#007aff;
+font-size:40px;
+cursor:pointer;
 `
 const MovieItem = Styled.div`
 display:flex;

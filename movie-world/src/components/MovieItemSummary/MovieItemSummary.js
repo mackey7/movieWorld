@@ -15,6 +15,7 @@ margin: 0 auto;
 
 const Title = Styled.h2`
 text-transform:uppercase;
+letter-spacing: 4px;
 `
 
 
