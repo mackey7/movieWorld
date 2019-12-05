@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { SearchBar } from '../SearchBar/SearchBar'
 import { SimpleRow } from '../../handlers/styles'
 import { Link } from 'react-router-dom'
-
+import { Animated } from "react-animated-css";
 const TopNavWrapper = styled.nav`
 background:#384b55;
 padding:20px 0px;
@@ -32,12 +32,18 @@ export const TopNav = () => {
     return (
         <TopNavWrapper>
             <SimpleRow>
-                <Link to="/">
-                    <Logo>Movie Word</Logo>
-                </Link>
-                <SearchBar />
+                <Animated animationIn="bounceInLeft" >
+                    <Link to="/">
+                        <Logo>Movie Word</Logo>
+                    </Link>
+                </Animated>
+                <Animated animationIn="fadeInDownBig" >
+                    <SearchBar />
+                </Animated>
             </SimpleRow>
-            <Fav to="/Favourite"><i class="fas fa-heart"></i></Fav>
+            <Animated animationIn="bounceInRight" >
+                <Fav to="/Favourite"><i class="fas fa-heart"></i></Fav>
+            </Animated>
         </TopNavWrapper>
     )
 }
