@@ -53,7 +53,9 @@ export const MovieItemCast = () => {
     return (
         <WrapperSection>
             <Wrapper>
-                <Title>Cast</Title>
+                <ScrollAnimation animateIn="bounceInLeft" animateOnce={true}>
+                    <Title>Cast</Title>
+                </ScrollAnimation>
                 <CaruselWrapper>
                     <ScrollAnimation animateIn="fadeInLeft" animateOnce={true} delay={1} >
                         <Icon className="fas fa-chevron-left"></Icon>
