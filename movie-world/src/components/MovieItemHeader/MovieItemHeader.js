@@ -1,5 +1,6 @@
 import React from 'react'
 import Styled from 'styled-components'
+import { Animated } from "react-animated-css";
 
 const Wrapper = Styled.header`
 min-width:100%;
@@ -65,27 +66,30 @@ export const MovieItemHeader = () => {
         <Wrapper>
             <HeaderContent>
                 <div>
-                    <Icon onClick={historyBack} className="fas fa-chevron-left"></Icon>
+                    <Animated animationIn="bounceInLeft" >
+                        <Icon onClick={historyBack} className="fas fa-chevron-left"></Icon>
+                    </Animated>
                 </div>
                 <HeaderContentBottom>
                     <MovieDetailsContainer>
-
-                        <MoviePoster src="https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg" />
-
-                        <MovieDetails>
-                            <h2> Frozen II</h2>
-                            <span> 7.1</span>
-                            <span> Relased | EN</span>
-                            <span> Animation | Family</span>
-                        </MovieDetails>
-
+                        <Animated animationIn="bounceInLeft" >
+                            <MoviePoster src="https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg" />
+                        </Animated>
+                        <Animated animationIn="bounceInRight" >
+                            <MovieDetails>
+                                <h2> Frozen II</h2>
+                                <span> 7.1</span>
+                                <span> Relased | EN</span>
+                                <span> Animation | Family</span>
+                            </MovieDetails>
+                        </Animated>
 
                     </MovieDetailsContainer>
-
-                    <HeartIcon className="fas fa-heart"></HeartIcon>
-
+                    <Animated animationIn="bounceInRight" >
+                        <HeartIcon className="fas fa-heart"></HeartIcon>
+                    </Animated>
                 </HeaderContentBottom>
             </HeaderContent>
-        </Wrapper>
+        </Wrapper >
     )
 }
