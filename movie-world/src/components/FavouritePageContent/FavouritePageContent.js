@@ -1,6 +1,8 @@
 import React from 'react'
 import Styled from 'styled-components'
 import { FavouritePageMovieItem } from '../FavouritePageMovieItem/FavouritePageMovieItem'
+import ScrollAnimation from 'react-animate-on-scroll';
+
 const Wrapper = Styled.section`
 min-height:100vh;
 background:#111617;
@@ -27,11 +29,30 @@ font-weight:100;
 export const FavouritePageContent = () => {
     return (
         <Wrapper>
-            <Title> Favourite</Title>
+            <ScrollAnimation animateIn="fadeInDownBig" animateOnce={true}>
+                <Title> Favourite</Title>
+            </ScrollAnimation>
             <MainWrapper>
+                <ScrollAnimation animateIn="fadeInUpBig" animateOnce={true}>
+                    <  FavouritePageMovieItem src="https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg" category="Animation | Adventure" name=" Barbie: Dolphin Magic" />
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="fadeInUpBig" animateOnce={true}>
+                    <  FavouritePageMovieItem src="https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg" category="Animation | Adventure" name=" Barbie: Dolphin Magic" />
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="fadeInUpBig" animateOnce={true}>
+                    <  FavouritePageMovieItem src="https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg" category="Animation | Adventure" name=" Barbie: Dolphin Magic" />
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="fadeInUpBig" animateOnce={true}>
+                    <  FavouritePageMovieItem src="https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg" category="Animation | Adventure" name=" Barbie: Dolphin Magic" />
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="fadeInUpBig" animateOnce={true}>
+                    <  FavouritePageMovieItem src="https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg" category="Animation | Adventure" name=" Barbie: Dolphin Magic" />
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="fadeInUpBig" animateOnce={true}>
+                    <  FavouritePageMovieItem src="https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg" category="Animation | Adventure" name=" Barbie: Dolphin Magic" />
+                </ScrollAnimation>
 
-                <  FavouritePageMovieItem src="https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg" category="Animation | Adventure" name=" Barbie: Dolphin Magic" />
-                <  FavouritePageMovieItem src="https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg" category="Animation | Adventure" name=" Barbie: Dolphin Magic" />
+
             </MainWrapper>
 
         </Wrapper>

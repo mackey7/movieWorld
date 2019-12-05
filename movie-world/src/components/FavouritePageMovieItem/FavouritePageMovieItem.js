@@ -1,11 +1,12 @@
 import React from 'react'
 import Styled from 'styled-components'
 import { Link } from 'react-router-dom'
+
 const Wrapper = Styled.div`
 display:flex;
 flex-direction:column;
 cursor:pointer;
-margin: 0px 20px;
+margin: 20px 20px;
 color:#d8d8d8;
 text-decoration:none;
 &:hover{
