@@ -6,7 +6,7 @@ const Wrapper = Styled.div`
 display:flex;
 flex-direction:column;
 cursor:pointer;
-margin: 20px 20px;
+margin: 20gitpx 20px;
 color:#d8d8d8;
 text-decoration:none;
 &:hover{

@@ -37,9 +37,9 @@ export const MovieItemTrailers = () => {
                 <ScrollAnimation animateIn="bounceInLeft" animateOnce={true}>
                     <MovieSection>
 
-                        <iframe width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
-                        <iframe width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
-                        <iframe width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
+                        <iframe title="1" width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
+                        <iframe title="2" width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
+                        <iframe title="3" width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
 
                     </MovieSection>
                 </ScrollAnimation>
