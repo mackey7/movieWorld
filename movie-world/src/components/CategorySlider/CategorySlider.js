@@ -21,15 +21,16 @@ const CategoryName = Styled.span`
 `
 
 const MainConatiner = Styled.div`
-    padding:30px 0px;;
+    /* padding:30px 0px;;
     display:flex;
     justify-content: space-between;
-    align-items:center;
+    align-items:center; */
 `
 const Slider = Styled.div`
     display:flex;
     flex-direction:row;
     max-width:80%;
+    margin: 40px auto;
 `
 
 
@@ -90,16 +91,15 @@ export const CategorySlider = ({ CategoryTitle }) => {
                         {CategoryTitle}
                     </CategoryName>
                 </ScrollAnimation>
-                <MainConatiner>
 
-                    <Slider>
-                        <Swiper {...params} >
+                <Slider>
+                    <Swiper {...params} >
 
-                            {pages}
+                        {pages}
 
-                        </Swiper>
-                    </Slider>
-                </MainConatiner>
+                    </Swiper>
+                </Slider>
+
             </SliderWrapper>
         </SliderContainer >
     )
