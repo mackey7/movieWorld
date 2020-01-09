@@ -1,6 +1,6 @@
 import React from 'react'
 import { CategorySlider } from '../../components/CategorySlider/CategorySlider'
-import { fetchPopularMovieOfDayApi } from '../../actions/movies'
+import { fetchPopularMovieOfDayApi, fetchUpcomingMovie } from '../../actions/movies'
 import { connect } from "react-redux";
 
 class HomePageCategories extends React.Component {
@@ -20,14 +20,15 @@ class HomePageCategories extends React.Component {
 
     ]
     componentDidMount() {
-        this.props.fetchPopularMovieOfDayApi()
+        this.props.fetchPopularMovieOfDayApi();
+        this.props.fetchUpcomingMovie()
     }
 
     render() {
         return (
             <div>
                 <CategorySlider CategoryTitle={"Upcoming"} data={this.props.movies.films.results} />
-                <CategorySlider CategoryTitle={"Popular"} data={this.MovieArray} />
+                <CategorySlider CategoryTitle={"Popular"} data={this.props.upcoming_movie.results} />
                 <CategorySlider CategoryTitle={"Now Playing"} data={this.MovieArray} />
                 <CategorySlider CategoryTitle={"Top Rated"} data={this.MovieArray} />
             </div >
@@ -38,12 +39,14 @@ class HomePageCategories extends React.Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchPopularMovieOfDayApi: () => dispatch(fetchPopularMovieOfDayApi()),
+        fetchUpcomingMovie: () => dispatch(fetchUpcomingMovie()),
     }
 }
 const mapStateToProps = (state) => {
-    console.log(state.movies.films.results)
+    console.log(state.movies)
     return {
-        movies: state.movies
+        movies: state.movies,
+        upcoming_movie: state.movies.upcoming_movie
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(HomePageCategories)
