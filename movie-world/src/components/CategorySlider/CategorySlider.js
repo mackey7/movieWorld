@@ -34,23 +34,7 @@ const Slider = Styled.div`
 `
 
 
-export const CategorySlider = ({ CategoryTitle }) => {
-
-    const MovieArray = [
-        { 'src': "https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg", "category": "Animation | Adventure", "name": "Barbie: Dolphin Magic" },
-        { 'src': "https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg", "category": "Animation | Adventure", "name": "Barbie: Dolphin Magic" },
-        { 'src': "https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg", "category": "Animation | Adventure", "name": "Barbie: Dolphin Magic" },
-        { 'src': "https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg", "category": "Animation | Adventure", "name": "Barbie: Dolphin Magic" },
-        { 'src': "https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg", "category": "Animation | Adventure", "name": "Barbie: Dolphin Magic" },
-        { 'src': "https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg", "category": "Animation | Adventure", "name": "Barbie: Dolphin Magic" },
-        { 'src': "https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg", "category": "Animation | Adventure", "name": "Barbie: Dolphin Magic" },
-        { 'src': "https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg", "category": "Animation | Adventure", "name": "Barbie: Dolphin Magic" },
-        { 'src': "https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg", "category": "Animation | Adventure", "name": "Barbie: Dolphin Magic" },
-        { 'src': "https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg", "category": "Animation | Adventure", "name": "Barbie: Dolphin Magic" },
-        { 'src': "https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg", "category": "Animation | Adventure", "name": "Barbie: Dolphin Magic" },
-        { 'src': "https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg", "category": "Animation | Adventure", "name": "Barbie: Dolphin Magic" }
-
-    ]
+export const CategorySlider = ({ CategoryTitle, data }) => {
 
     const params = {
         init: true,
@@ -72,14 +56,16 @@ export const CategorySlider = ({ CategoryTitle }) => {
         }
     };
 
-    const pages =
-        MovieArray.map((item, key) => {
+    const pages = data.length > 0 ?
+        data.map((item, key) => {
             return (
-                < div >
-                    < CategorySliderFilmItem src={item.src} category={item.category} name={item.name} />
+                < div key={key} >
+                    < CategorySliderFilmItem src={item.poster_path} category={item.media_type} name={item.title} />
                 </div >
             )
-        })
+        }) : console.log("err")
+
+
 
     // 
 
@@ -91,15 +77,11 @@ export const CategorySlider = ({ CategoryTitle }) => {
                         {CategoryTitle}
                     </CategoryName>
                 </ScrollAnimation>
-
                 <Slider>
                     <Swiper {...params} >
-
                         {pages}
-
                     </Swiper>
                 </Slider>
-
             </SliderWrapper>
         </SliderContainer >
     )
