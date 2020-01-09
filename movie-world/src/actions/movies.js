@@ -7,7 +7,7 @@ export const fetchPopularMovieOfDayApi = () => {
     return (dispatch) => {
         return axios.get(`${API}${API_KEY} `)
             .then(response => {
-                dispatch(fetchPosts(response.data));
+                dispatch(fetchPopularMovieOfDay(response.data));
             })
             .catch(error => {
                 throw error;
