@@ -56,7 +56,7 @@ export const CategorySlider = ({ CategoryTitle, data }) => {
         }
     };
 
-    const pages = data.length > 0 ?
+    const pages = data !== undefined && data.length > 0 ?
         data.map((item, key) => {
             return (
                 < div key={key} >

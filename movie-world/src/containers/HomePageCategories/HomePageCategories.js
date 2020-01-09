@@ -26,10 +26,10 @@ class HomePageCategories extends React.Component {
     render() {
         return (
             <div>
-                <CategorySlider CategoryTitle={"Trending"} data={this.props.movies.films.results} />
-                <CategorySlider CategoryTitle={"Trending"} data={this.MovieArray} />
-                <CategorySlider CategoryTitle={"Trending"} data={this.MovieArray} />
-                <CategorySlider CategoryTitle={"Trending"} data={this.MovieArray} />
+                <CategorySlider CategoryTitle={"Upcoming"} data={this.props.movies.films.results} />
+                <CategorySlider CategoryTitle={"Popular"} data={this.MovieArray} />
+                <CategorySlider CategoryTitle={"Now Playing"} data={this.MovieArray} />
+                <CategorySlider CategoryTitle={"Top Rated"} data={this.MovieArray} />
             </div >
         )
     }
