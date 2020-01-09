@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { FETCH_POPULAR_MOVIE_OF_DAY, FETCH_UPCOMING_MOVIE } from './actions_types/index'
+import { FETCH_POPULAR_MOVIE_OF_DAY, FETCH_UPCOMING_MOVIE, FETCH_POPULAR_MOVIES } from './actions_types/index'
 import { API_KEY } from '../env/API_KEY'
 const API = "https://api.themoviedb.org/3/trending/movie/day?api_key="
 
@@ -37,6 +37,24 @@ export const fetchUpcomingMovie = () => {
 export const fetchUpcomingMovieSuccess = (payload) => {
     return {
         type: FETCH_UPCOMING_MOVIE,
+        payload
+    }
+}
+export const fetchPopularMovie = () => {
+    return (dispatch) => {
+        return axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1 `)
+            .then(response => {
+                dispatch(fetchPopularMovieSuccess(response.data));
+            })
+            .catch(error => {
+                throw error;
+            })
+    }
+}
+
+export const fetchPopularMovieSuccess = (payload) => {
+    return {
+        type: FETCH_POPULAR_MOVIES,
         payload
     }
 }
