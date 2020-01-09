@@ -1,22 +1,23 @@
 import React from 'react'
 import { CategorySlider } from '../../components/CategorySlider/CategorySlider'
-import { fetchUpcomingMovie, fetchPopularMovie, fetchNowPlayingMovies } from '../../actions/movies'
+import { fetchUpcomingMovies, fetchPopularMovies, fetchNowPlayingMovies, fetchTopRatedMovies } from '../../actions/movies'
 import { connect } from "react-redux";
 
 class HomePageCategories extends React.Component {
     componentDidMount() {
-        this.props.fetchUpcomingMovie();
-        this.props.fetchPopularMovie();
-        this.props.fetchNowPlayingMovies()
+        this.props.fetchUpcomingMovies();
+        this.props.fetchPopularMovies();
+        this.props.fetchNowPlayingMovies();
+        this.props.fetchTopRatedMovies();
     }
 
     render() {
         return (
             <div>
                 <CategorySlider CategoryTitle={"Upcoming"} data={this.props.popular_movies.results} />
-                <CategorySlider CategoryTitle={"Popular"} data={this.props.upcoming_movie.results} />
+                <CategorySlider CategoryTitle={"Popular"} data={this.props.upcoming_movies.results} />
                 <CategorySlider CategoryTitle={"Now Playing"} data={this.props.now_playing_movies.results} />
-                {/* <CategorySlider CategoryTitle={"Top Rated"} data={this.MovieArray} /> */}
+                <CategorySlider CategoryTitle={"Top Rated"} data={this.props.top_rated_movies.results} />
             </div >
         )
     }
@@ -24,17 +25,19 @@ class HomePageCategories extends React.Component {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchUpcomingMovie: () => dispatch(fetchUpcomingMovie()),
-        fetchPopularMovie: () => dispatch(fetchPopularMovie()),
+        fetchUpcomingMovies: () => dispatch(fetchUpcomingMovies()),
+        fetchPopularMovies: () => dispatch(fetchPopularMovies()),
         fetchNowPlayingMovies: () => dispatch(fetchNowPlayingMovies()),
+        fetchTopRatedMovies: () => dispatch(fetchTopRatedMovies())
     }
 }
 const mapStateToProps = (state) => {
     console.log(state.movies)
     return {
-        upcoming_movie: state.movies.upcoming_movie,
+        upcoming_movies: state.movies.upcoming_movies,
         popular_movies: state.movies.popular_movies,
-        now_playing_movies: state.movies.now_playing_movies
+        now_playing_movies: state.movies.now_playing_movies,
+        top_rated_movies: state.movies.top_rated_movies
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(HomePageCategories)

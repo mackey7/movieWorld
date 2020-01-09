@@ -1,4 +1,4 @@
-import { FETCH_UPCOMING_MOVIE, FETCH_POPULAR_MOVIES, FETCH_NOW_PLAYING_MOVIES, FETCH_TOP_RATED_MOVIES } from '../actions/actions_types'
+import { FETCH_UPCOMING_MOVIES, FETCH_POPULAR_MOVIES, FETCH_NOW_PLAYING_MOVIES, FETCH_TOP_RATED_MOVIES } from '../actions/actions_types'
 
 const initial = {
     upcoming_movies: [],
@@ -10,8 +10,8 @@ const initial = {
 
 const moviesReducer = (state = initial, actions) => {
     switch (actions.type) {
-        case FETCH_UPCOMING_MOVIE: {
-            return { ...state, upcoming_movie: actions.payload }
+        case FETCH_UPCOMING_MOVIES: {
+            return { ...state, upcoming_movies: actions.payload }
         }
         case FETCH_POPULAR_MOVIES: {
             return { ...state, popular_movies: actions.payload }
