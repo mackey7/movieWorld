@@ -1,5 +1,5 @@
 import React from 'react'
-import { CategorySlider } from '../../components/CategorySlider/CategorySlider'
+import CategorySlider from '../../components/CategorySlider/CategorySlider'
 import { fetchUpcomingMovies, fetchPopularMovies, fetchNowPlayingMovies, fetchTopRatedMovies } from '../../actions/movies'
 import { connect } from "react-redux";
 

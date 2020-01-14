@@ -1,6 +1,5 @@
 import React from 'react'
 import Styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 const Wrapper = Styled.div`
     display:flex;
@@ -33,15 +32,13 @@ export const CategorySliderFilmItem = ({ src, name, category }) => {
     return (
 
         <Wrapper>
-            <Link to="/movie/8">
-                <Image src={src} />
-                <MovieName>
-                    {name}
-                </MovieName>
-                <MovieCategory>
-                    {category}
-                </MovieCategory>
-            </Link>
+            <Image src={`https://image.tmdb.org/t/p/w154/${src}`} />
+            <MovieName>
+                {name}
+            </MovieName>
+            <MovieCategory>
+                {category}
+            </MovieCategory>
         </Wrapper>
 
     )
