@@ -32,7 +32,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 const mapStateToProps = (state) => {
-    console.log(state.movies)
     return {
         upcoming_movies: state.movies.upcoming_movies,
         popular_movies: state.movies.popular_movies,

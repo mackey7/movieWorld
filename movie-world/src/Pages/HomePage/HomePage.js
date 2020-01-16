@@ -1,14 +1,14 @@
 import React from 'react';
 import { TopNav } from '../../components/TopNav/TopNav'
 import { Footer } from '../../components/Footer/Footer'
-import { Header } from '../../components/Header/Header'
 import HomePageCategories from '../../containers/HomePageCategories/HomePageCategories'
+import HeaderSliderContainer from '../../containers/HeaderSliderContainer/HeaderSliderContainer'
 
 export const HomePage = () => {
     return (
         <div>
             <TopNav />
-            <Header />
+            <HeaderSliderContainer indexOfSwiper={10} />
             <HomePageCategories />
             <Footer />
 
