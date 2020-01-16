@@ -20,7 +20,7 @@ letter-spacing: 4px;
 `
 
 
-export const MovieItemSummary = () => {
+export const MovieItemSummary = ({ summary }) => {
     return (
         <WrapperSection>
             <Wrapper>
@@ -31,11 +31,9 @@ export const MovieItemSummary = () => {
                 </ScrollAnimation>
                 <ScrollAnimation animateIn="bounceInRight" animateOnce={true}>
                     <p>
-                        Elsa, Anna, Kristoff and Olaf head far into the forest to learn the truth about an ancient mystery of their kingdom.
-                        Elsa, Anna, Kristoff and Olaf head far into the forest to learn the truth about an ancient mystery of their kingdom.
-                        Elsa, Anna, Kristoff and Olaf head far into the forest to learn the truth about an ancient mystery of their kingdom.
-    
-                </p>
+                        {summary}
+
+                    </p>
                 </ScrollAnimation>
 
             </Wrapper>
