@@ -12,7 +12,7 @@ justify-content:space-around;
 width:100%;
 
 `
-const Logo = styled.span`
+const Logo = styled(Link)`
 text-shadow: 2px 0px #fff;
 font-size:40px;
 font-weight:900;
@@ -21,6 +21,7 @@ margin-right:10px;
 text-decoration:none;
 `
 const Fav = styled(Link)`
+text-decoration:none;
 font-size:40px;
 color:#cb0a0a;
 &:hover{
@@ -33,9 +34,11 @@ export const TopNav = () => {
         <TopNavWrapper>
             <SimpleRow>
                 <Animated animationIn="bounceInLeft" >
-                    <Link to="/">
-                        <Logo>Movie Word</Logo>
-                    </Link>
+
+                    <Logo to="/">
+                        Movie Word
+                    </Logo>
+
                 </Animated>
                 <Animated animationIn="fadeInDownBig" >
                     <SearchBar />
@@ -44,6 +47,6 @@ export const TopNav = () => {
             <Animated animationIn="bounceInRight" >
                 <Fav to="/Favourite"><i class="fas fa-heart"></i></Fav>
             </Animated>
-        </TopNavWrapper>
+        </TopNavWrapper >
     )
 }
