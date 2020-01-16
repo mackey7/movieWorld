@@ -8,7 +8,7 @@ class MovieItem extends Component {
         const UrlId = this.props.match.params.id
         return (
             <div>
-                <MovieItemContainer urlId={UrlId} />
+                <MovieItemContainer UrlId={UrlId} />
             </div>
         )
     }
