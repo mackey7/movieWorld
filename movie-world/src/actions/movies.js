@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { FETCH_UPCOMING_MOVIES, FETCH_POPULAR_MOVIES, FETCH_NOW_PLAYING_MOVIES, FETCH_TOP_RATED_MOVIES, FETCH_MOVIE_ITEM, FETCH_MOVIE_CREDITS } from './actions_types/index'
+import { FETCH_UPCOMING_MOVIES, FETCH_POPULAR_MOVIES, FETCH_NOW_PLAYING_MOVIES, FETCH_TOP_RATED_MOVIES, FETCH_MOVIE_ITEM, FETCH_MOVIE_CREDITS, FETCH_VIDEOS_ADDED_TO_MOVIE } from './actions_types/index'
 import { API_KEY } from '../env/API_KEY'
 
 
@@ -117,4 +117,23 @@ export const fetchMovieCreditsSuccess = (payload) => {
         payload
     }
 }
+export const fetchVideosAddedToMovie = (movie_id) => {
+    return (dispatch) => {
+        return axios.get(`https://api.themoviedb.org/3/movie/${movie_id}/videos?api_key=${API_KEY}&language=en-US`)
+            .then(response => {
+                dispatch(fetchVideosAddedToMovieSuccess(response.data));
+            })
+            .catch(error => {
+                throw error;
+            })
+    }
+}
+
+export const fetchVideosAddedToMovieSuccess = (payload) => {
+    return {
+        type: FETCH_VIDEOS_ADDED_TO_MOVIE,
+        payload
+    }
+}
+
 
