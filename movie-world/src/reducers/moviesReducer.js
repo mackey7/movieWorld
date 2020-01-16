@@ -1,4 +1,4 @@
-import { FETCH_UPCOMING_MOVIES, FETCH_POPULAR_MOVIES, FETCH_NOW_PLAYING_MOVIES, FETCH_TOP_RATED_MOVIES, FETCH_MOVIE_ITEM, FETCH_MOVIE_CREDITS } from '../actions/actions_types'
+import { FETCH_UPCOMING_MOVIES, FETCH_POPULAR_MOVIES, FETCH_NOW_PLAYING_MOVIES, FETCH_TOP_RATED_MOVIES, FETCH_MOVIE_ITEM, FETCH_MOVIE_CREDITS, FETCH_VIDEOS_ADDED_TO_MOVIE } from '../actions/actions_types'
 
 const initial = {
     upcoming_movies: [],
@@ -6,7 +6,8 @@ const initial = {
     now_playing_movies: [],
     top_rated_movies: [],
     movie_item: [],
-    movie_credits: []
+    movie_credits: [],
+    videos_added_to_movie: []
 
 
 }
@@ -30,6 +31,9 @@ const moviesReducer = (state = initial, actions) => {
         }
         case FETCH_MOVIE_CREDITS: {
             return { ...state, movie_credits: actions.payload }
+        }
+        case FETCH_VIDEOS_ADDED_TO_MOVIE: {
+            return { ...state, videos_added_to_movie: actions.payload }
         }
         default:
             return state;
