@@ -12,8 +12,10 @@ class HomePageCategories extends React.Component {
     }
 
     render() {
+
         return (
-            <div>
+
+            < div >
                 <CategorySlider indexOfSwiper={0} CategoryTitle={"Upcoming"} data={this.props.popular_movies.results} />
                 <CategorySlider indexOfSwiper={1} CategoryTitle={"Popular"} data={this.props.upcoming_movies.results} />
                 <CategorySlider indexOfSwiper={2} CategoryTitle={"Now Playing"} data={this.props.now_playing_movies.results} />

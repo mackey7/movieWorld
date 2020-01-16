@@ -39,7 +39,9 @@ background: linear-gradient(90deg, rgba(255,255,255,0.24693627450980393) 0%, rgb
 `
 
 class CategorySlider extends React.Component {
+
     render() {
+
         (() => {
             const sliderEl = document.querySelectorAll(".swiper-container");
 
@@ -67,6 +69,7 @@ class CategorySlider extends React.Component {
         })();
 
         return (
+
             <SliderContainer>
                 <SliderWrapper>
                     <div className="carousel-container" >
