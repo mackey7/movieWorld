@@ -1,6 +1,11 @@
 import React from 'react'
 import Styled from 'styled-components'
 import ScrollAnimation from 'react-animate-on-scroll';
+import Swiper from 'swiper';
+import 'swiper/css/swiper.css'
+
+import '../../styles/carousel.scss'
+
 
 const Title = Styled.h2`
 text-transform:uppercase;
@@ -49,7 +54,32 @@ width:100px;
 border-radius:30px;
 `
 
-export const MovieItemCast = () => {
+export const MovieItemCast = ({ data, indexOfSwiper }) => {
+    (() => {
+        const sliderEl = document.querySelectorAll(".swiper-container");
+
+        sliderEl.forEach((slides, index) => {
+            const slider = new Swiper(slides, {
+                init: true,
+                loop: true,
+                spaceBetween: 10,
+                observer: true,
+
+                breakpoints: {
+                    1145: {
+                        slidesPerView: 8
+                    },
+                    699: {
+                        slidesPerView: 3
+                    }
+                },
+                navigation: {
+                    nextEl: `.swiper-button-next${index}`,
+                    prevEl: `.swiper-button-prev${index}`
+                }
+            });
+        });
+    })();
     return (
         <WrapperSection>
             <Wrapper>
@@ -61,33 +91,39 @@ export const MovieItemCast = () => {
                         <Icon className="fas fa-chevron-left"></Icon>
                     </ScrollAnimation>
                     <CaruselSection>
-                        <ScrollAnimation animateIn="bounceInDown" animateOnce={true}>
-                            <MovieItem>
-                                <Img src="https://image.tmdb.org/t/p/w185/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg" />
-                                <span> Jack Black</span>
-                            </MovieItem>
-                        </ScrollAnimation>
+                        {console.log(data)}
+                        {data ?
+                            <div className="swiper-container">
 
-                        <ScrollAnimation animateIn="bounceInDown" animateOnce={true}>
-                            <MovieItem>
-                                <Img src="https://image.tmdb.org/t/p/w185/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg" />
-                                <span> Jack Black</span>
-                            </MovieItem>
-                        </ScrollAnimation>
+                                <div className="swiper-wrapper">
+                                    {data.map((person, i) => {
 
-                        <ScrollAnimation animateIn="bounceInDown" animateOnce={true}>
-                            <MovieItem>
-                                <Img src="https://image.tmdb.org/t/p/w185/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg" />
-                                <span> Jack Black</span>
-                            </MovieItem>
-                        </ScrollAnimation>
+                                        return (
+                                            <div key={person.id} className="swiper-slide">
 
-                        <ScrollAnimation animateIn="bounceInDown" animateOnce={true}>
-                            <MovieItem>
-                                <Img src="https://image.tmdb.org/t/p/w185/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg" />
-                                <span> Jack Black</span>
-                            </MovieItem>
-                        </ScrollAnimation>
+                                                <img className="swiper-slide__image" src={`https://image.tmdb.org/t/p/w154/${person.profile_path}`} alt={person.name} />
+                                                <h3 className="swiper-slide__title">{person.name}</h3>
+
+                                            </div>
+                                        );
+
+                                    })}
+
+
+                                </div>
+
+                                <div
+                                    className={`swiper-button-prev${indexOfSwiper}`}
+                                ></div>
+                                <div
+                                    className={`swiper-button-next${indexOfSwiper}`}
+                                ></div>
+                            </div>
+                            :
+                            <p className="people-carousel-container-error">No cast found :(</p>
+                        }
+
+
 
 
                     </CaruselSection>
