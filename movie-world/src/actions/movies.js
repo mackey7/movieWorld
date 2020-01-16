@@ -99,3 +99,22 @@ export const fetchMovieItemSuccess = (payload) => {
     }
 }
 
+export const fetchMovieCredits = (movie_id) => {
+    return (dispatch) => {
+        return axios.get(`https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=${API_KEY}`)
+            .then(response => {
+                dispatch(fetchMovieCreditsSuccess(response.data));
+            })
+            .catch(error => {
+                throw error;
+            })
+    }
+}
+
+export const fetchMovieCreditsSuccess = (payload) => {
+    return {
+        type: FETCH_MOVIE_CREDITS,
+        payload
+    }
+}
+
