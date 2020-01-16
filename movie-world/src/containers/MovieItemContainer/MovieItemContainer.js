@@ -3,16 +3,17 @@ import { MovieItemHeader } from '../../components/MovieItemHeader/MovieItemHeade
 import { MovieItemSummary } from '../../components/MovieItemSummary/MovieItemSummary'
 import { MovieItemCast } from '../../components/MovieItemCast/MovieItemCast'
 import { MovieItemTrailers } from '../../components/MovieItemTrailers/MovieItemTrailers'
-import { fetchMovieItem, fetchMovieCredits } from '../../actions/movies'
+import { fetchMovieItem, fetchMovieCredits, fetchVideosAddedToMovie } from '../../actions/movies'
 import { connect } from "react-redux";
 class MovieItemContainer extends Component {
     componentDidMount() {
         this.props.fetchMovieItem(this.props.UrlId);
         this.props.fetchMovieCredits(this.props.UrlId);
-
+        this.props.fetchVideosAddedToMovie(this.props.UrlId);
     }
     render() {
-        { console.log(this.props.movie_credits.cast) }
+        { console.log("this.props.videos_added_to_movie") }
+        { console.log(this.props.videos_added_to_movie) }
         return (
 
             < div >
@@ -30,6 +31,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchMovieItem: (movie_id) => dispatch(fetchMovieItem(movie_id)),
         fetchMovieCredits: (movie_id) => dispatch(fetchMovieCredits(movie_id)),
+        fetchVideosAddedToMovie: (movie_id) => dispatch(fetchVideosAddedToMovie(movie_id))
 
 
     }
@@ -37,7 +39,8 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
     return {
         movie_item: state.movies.movie_item,
-        movie_credits: state.movies.movie_credits
+        movie_credits: state.movies.movie_credits,
+        videos_added_to_movie: state.movies.videos_added_to_movie
 
     }
 }
