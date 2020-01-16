@@ -15,7 +15,7 @@ class MovieItemContainer extends Component {
         return (
 
             < div >
-                <MovieItemHeader />
+                <MovieItemHeader data={this.props.movie_item} />
                 <MovieItemSummary />
                 <MovieItemCast />
                 <MovieItemTrailers />

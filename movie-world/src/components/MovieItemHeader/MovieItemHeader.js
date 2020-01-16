@@ -5,7 +5,7 @@ import { Animated } from "react-animated-css";
 const Wrapper = Styled.header`
 min-width:100%;
 height:100vh;
-background-image: url("https://image.tmdb.org/t/p/original/k2WyDw2NTUIWnuEs5gT7wgrCQg6.jpg");
+background-image: url(${props => props.bgUrl});
 background-repeat:none;
 background-position:center;
 background-size: 100% 100vh; 
@@ -58,12 +58,12 @@ color:#fff;
 
 
 
-export const MovieItemHeader = () => {
+export const MovieItemHeader = ({ data }) => {
     const historyBack = () => {
         window.history.back();
     }
     return (
-        <Wrapper>
+        <Wrapper bgUrl={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`}>
             <HeaderContent>
                 <div>
                     <Animated animationIn="bounceInLeft" >
@@ -73,14 +73,13 @@ export const MovieItemHeader = () => {
                 <HeaderContentBottom>
                     <MovieDetailsContainer>
                         <Animated animationIn="bounceInLeft" >
-                            <MoviePoster src="https://image.tmdb.org/t/p/w154/r15SUgzjL8bablcdEkHk9T7TSRl.jpg" />
+                            <MoviePoster src={`https://image.tmdb.org/t/p/w154/${data.poster_path}`} />
                         </Animated>
                         <Animated animationIn="bounceInRight" >
                             <MovieDetails>
-                                <h2> Frozen II</h2>
-                                <span> 7.1</span>
-                                <span> Relased | EN</span>
-                                <span> Animation | Family</span>
+                                <h2> {data.original_title}</h2>
+                                <span> {data.vote_average}</span>
+                                <span>{data.status} | {data.original_language}</span>
                             </MovieDetails>
                         </Animated>
 
