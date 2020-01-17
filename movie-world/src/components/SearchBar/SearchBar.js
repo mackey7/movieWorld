@@ -28,18 +28,19 @@ class SearchBar extends Component {
 
     handleChange = (e) => {
         this.setState({ searchValue: e.target.value })
-        console.log(e.target.value)
     }
     render() {
         return (
             <form>
                 <label for="search"></label>
                 <Input type="text" name="search" id="search" value={this.state.searchValue} onChange={this.handleChange} />
-                <Button type="submit" >
-                    <i className="fas fa-search">
-                        <Link to={`/serach${this.state.searchValue}`}></Link>
-                    </i>
-                </Button>
+                <Link to={`/search/${this.state.searchValue}`} >
+                    <Button  >
+                        <i className="fas fa-search">
+                        </i>
+                    </Button>
+                </Link>
+
             </form>
 
         )
