@@ -12,15 +12,14 @@ class MovieItemContainer extends Component {
         this.props.fetchVideosAddedToMovie(this.props.UrlId);
     }
     render() {
-        { console.log("this.props.videos_added_to_movie") }
-        { console.log(this.props.videos_added_to_movie) }
+
         return (
 
             < div >
                 <MovieItemHeader data={this.props.movie_item} />
                 <MovieItemSummary summary={this.props.movie_item.overview} />
-                <MovieItemCast data={this.props.movie_credits.cast} indexOfSwiper={6} />
-                <MovieItemTrailers />
+                {/* <MovieItemCast data={this.props.movie_credits.cast} indexOfSwiper={6} /> */}
+                <MovieItemTrailers data={this.props.videos_added_to_movie.results} />
 
             </div >
         )

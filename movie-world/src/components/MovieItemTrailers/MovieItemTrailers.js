@@ -20,12 +20,13 @@ letter-spacing: 4px;
 const MovieSection = Styled.section`
 display:flex;
 justify-content:space-between;
+flex-wrap:wrap;
 
 iframe{
     border:0px;
 }
 `
-export const MovieItemTrailers = () => {
+export const MovieItemTrailers = ({ data }) => {
     return (
         <WrapperSection>
             <Wrapper>
@@ -36,10 +37,15 @@ export const MovieItemTrailers = () => {
                 </ScrollAnimation>
                 <ScrollAnimation animateIn="bounceInLeft" animateOnce={true}>
                     <MovieSection>
+                        {console.log(data)}
+                        {
+                            data ?
+                                data.map(video =>
+                                    <iframe key={video.id} title="1" width="33%" height="250px" src={`https://www.youtube.com/embed/${video.key}`}></iframe>
+                                )
+                                : <div>LOADING</div>
+                        }
 
-                        <iframe title="1" width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
-                        <iframe title="2" width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
-                        <iframe title="3" width="33%" height="250px" src="https://www.youtube.com/embed/F6QaLsw8EWY"></iframe>
 
                     </MovieSection>
                 </ScrollAnimation>
