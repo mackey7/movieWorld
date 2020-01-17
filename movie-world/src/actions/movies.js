@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { FETCH_UPCOMING_MOVIES, FETCH_POPULAR_MOVIES, FETCH_NOW_PLAYING_MOVIES, FETCH_TOP_RATED_MOVIES, FETCH_MOVIE_ITEM, FETCH_MOVIE_CREDITS, FETCH_VIDEOS_ADDED_TO_MOVIE } from './actions_types/index'
+import { FETCH_UPCOMING_MOVIES, FETCH_POPULAR_MOVIES, FETCH_NOW_PLAYING_MOVIES, FETCH_TOP_RATED_MOVIES, FETCH_MOVIE_ITEM, FETCH_MOVIE_CREDITS, FETCH_VIDEOS_ADDED_TO_MOVIE, FETCH_SEARCHING_KEYWORD } from './actions_types/index'
 import { API_KEY } from '../env/API_KEY'
 
 
@@ -137,3 +137,22 @@ export const fetchVideosAddedToMovieSuccess = (payload) => {
 }
 
 
+
+export const fetchSerachingKeyword = (keyword) => {
+    return (dispatch) => {
+        return axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${keyword}&page=1&include_adult=false`)
+            .then(response => {
+                dispatch(fetchSerachingKeywordSuccess(response.data));
+            })
+            .catch(error => {
+                throw error;
+            })
+    }
+}
+
+export const fetchSerachingKeywordSuccess = (payload) => {
+    return {
+        type: FETCH_SEARCHING_KEYWORD,
+        payload
+    }
+}
