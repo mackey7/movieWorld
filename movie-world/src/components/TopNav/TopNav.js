@@ -1,6 +1,6 @@
 import React from "react"
 import styled from 'styled-components'
-import { SearchBar } from '../SearchBar/SearchBar'
+import SearchBar from '../SearchBar/SearchBar'
 import { SimpleRow } from '../../handlers/styles'
 import { Link } from 'react-router-dom'
 import { Animated } from "react-animated-css";

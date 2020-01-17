@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Input = styled.input`
 border-color:  #000;
@@ -20,15 +21,28 @@ font-weight:700;
 background:#ebedf0;
 }
 `
-export const SearchBar = () => {
-    return (
-        <form>
-            <label for="search"></label>
-            <Input type="text" name="search" id="search" />
-            <Button type="submit" >
-                <i className="fas fa-search"></i>
-            </Button>
-        </form>
+class SearchBar extends Component {
+    state = {
+        searchValue: ""
+    }
 
-    )
+    handleChange = (e) => {
+        this.setState({ searchValue: e.target.value })
+        console.log(e.target.value)
+    }
+    render() {
+        return (
+            <form>
+                <label for="search"></label>
+                <Input type="text" name="search" id="search" value={this.state.searchValue} onChange={this.handleChange} />
+                <Button type="submit" >
+                    <i className="fas fa-search">
+                        <Link to={`/serach${this.state.searchValue}`}></Link>
+                    </i>
+                </Button>
+            </form>
+
+        )
+    }
 }
+export default SearchBar
