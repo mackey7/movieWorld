@@ -22,6 +22,8 @@ background:#ebedf0;
 }
 `
 class SearchBar extends Component {
+
+
     state = {
         searchValue: ""
     }
@@ -29,12 +31,18 @@ class SearchBar extends Component {
     handleChange = (e) => {
         this.setState({ searchValue: e.target.value })
     }
+
+    reload = () => {
+        setTimeout(function () { window.location.reload(true); }, 100);
+
+    }
     render() {
+        { console.log(window) }
         return (
             <form>
                 <label for="search"></label>
                 <Input type="text" name="search" id="search" value={this.state.searchValue} onChange={this.handleChange} />
-                <Link to={`/search/${this.state.searchValue}`} >
+                <Link to={`/search/${this.state.searchValue}`} onClick={this.reload} >
                     <Button  >
                         <i className="fas fa-search">
                         </i>

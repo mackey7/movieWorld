@@ -16,7 +16,7 @@ export const SearchResultsItem = ({ id, src, title }) => {
     return (
         <Wrapper to={`/movie/${id}`}>
 
-            <img src={`https://image.tmdb.org/t/p/original/${src}`} />
+            <Img src={`https://image.tmdb.org/t/p/original/${src}`} />
             <p>{title} </p>
 
         </Wrapper >
