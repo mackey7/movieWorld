@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { fetchSerachingKeyword } from '../../actions/movies'
 import { connect } from "react-redux";
-
+import { TopNav } from '../../components/TopNav/TopNav'
+import { SearchResultsContent } from '../../components/SearchResultsContent/SearchResultsContent'
 class SearchContainer extends Component {
     componentDidMount() {
         this.props.fetchSerachingKeyword(this.props.UrlId);
@@ -10,8 +11,10 @@ class SearchContainer extends Component {
     render() {
         console.log(this.props.search_video)
         return (
-            <div>search {this.props.UrlId}</div>
-
+            <div>
+                <TopNav />
+                <SearchResultsContent url={this.props.UrlId} data={this.props.search_video} />
+            </div>
 
         )
     }
