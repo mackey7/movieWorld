@@ -1,5 +1,7 @@
 import React from 'react'
 import Styled from 'styled-components'
+import { SearchResultsItem } from '../SearchResultsItem/SearchResultsItem'
+
 
 const SectionWrapper = Styled.section`
     background:#3d2f87;
@@ -19,10 +21,12 @@ const PageTitle = Styled.h1`
 
 const Content = Styled.div`
     margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
 `
 
 export const SearchResultsContent = ({ url, data }) => {
-
+    console.log(data)
     return (
         <SectionWrapper>
             <PageTitle> Search results for {url} </PageTitle>
@@ -30,9 +34,15 @@ export const SearchResultsContent = ({ url, data }) => {
                 {
                     data ?
                         data.map((item, key) =>
-                            <div key={key}>
+                            <div>
+                                <SearchResultsItem key={key} id={item.id} title={item.original_title} src={item.poster_path} />
+
 
                             </div>
+
+
+
+
                         )
                         :
                         <div> NO RESLUTS</div>
