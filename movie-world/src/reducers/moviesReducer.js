@@ -1,4 +1,4 @@
-import { ADD_MOVIE_TO_FAVOURITE, FETCH_UPCOMING_MOVIES, FETCH_POPULAR_MOVIES, FETCH_NOW_PLAYING_MOVIES, FETCH_TOP_RATED_MOVIES, FETCH_MOVIE_ITEM, FETCH_MOVIE_CREDITS, FETCH_VIDEOS_ADDED_TO_MOVIE, FETCH_SEARCHING_KEYWORD } from '../actions/actions_types'
+import { DELETE_MOVIE_FROM_FAVOURITE, ADD_MOVIE_TO_FAVOURITE, FETCH_UPCOMING_MOVIES, FETCH_POPULAR_MOVIES, FETCH_NOW_PLAYING_MOVIES, FETCH_TOP_RATED_MOVIES, FETCH_MOVIE_ITEM, FETCH_MOVIE_CREDITS, FETCH_VIDEOS_ADDED_TO_MOVIE, FETCH_SEARCHING_KEYWORD } from '../actions/actions_types'
 
 const initial = {
     upcoming_movies: [],
@@ -41,8 +41,11 @@ const moviesReducer = (state = initial, actions) => {
             return { ...state, search_video: actions.payload }
         }
         case ADD_MOVIE_TO_FAVOURITE: {
-            console.log(state.favourite_movies)
             return { ...state, favourite_movies: [actions.id, actions.poster, actions.titile] }
+        }
+        case DELETE_MOVIE_FROM_FAVOURITE: {
+            const sorted = state.favourite_movies.filter(item => item.id !== actions.id)
+            return { ...state, favourite_movies: sorted }
         }
         default:
             return state;
