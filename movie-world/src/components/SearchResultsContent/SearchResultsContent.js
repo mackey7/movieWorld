@@ -9,6 +9,7 @@ const SectionWrapper = Styled.section`
     min-height:100vh;
     padding:0;
     margin:0;
+
 `
 const PageTitle = Styled.h1`
     text-align:center;
@@ -23,6 +24,7 @@ const Content = Styled.div`
     margin:0 auto;
     display:flex;
     flex-wrap:wrap;
+    width:80%;
 `
 
 export const SearchResultsContent = ({ url, data }) => {
