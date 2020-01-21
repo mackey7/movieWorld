@@ -85,13 +85,10 @@ class MovieItemHeader extends Component {
             console.log(this.props.AddMovieToFavourite(this.props.data.id, this.props.data.poster_path, this.props.data.original_title))
 
         } else {
-            this.props.DeleteMovieFormFavourite(this.props.data.id)
-            console.log(this.props.DeleteMovieFormFavourite(this.props.data.id))
+            this.props.DeleteMovieFromFavourite(this.props.data.id)
+            console.log(this.props.DeleteMovieFromFavourite(this.props.data.id))
 
         }
-        console.log(this.state.isClick)
-
-
     }
     render() {
 
