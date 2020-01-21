@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { FETCH_UPCOMING_MOVIES, FETCH_POPULAR_MOVIES, FETCH_NOW_PLAYING_MOVIES, FETCH_TOP_RATED_MOVIES, FETCH_MOVIE_ITEM, FETCH_MOVIE_CREDITS, FETCH_VIDEOS_ADDED_TO_MOVIE, FETCH_SEARCHING_KEYWORD } from './actions_types/index'
+import { ADD_MOVIE_TO_FAVOURITE, FETCH_UPCOMING_MOVIES, FETCH_POPULAR_MOVIES, FETCH_NOW_PLAYING_MOVIES, FETCH_TOP_RATED_MOVIES, FETCH_MOVIE_ITEM, FETCH_MOVIE_CREDITS, FETCH_VIDEOS_ADDED_TO_MOVIE, FETCH_SEARCHING_KEYWORD } from './actions_types/index'
 import { API_KEY } from '../env/API_KEY'
 
 
@@ -154,5 +154,13 @@ export const fetchSerachingKeywordSuccess = (payload) => {
     return {
         type: FETCH_SEARCHING_KEYWORD,
         payload
+    }
+}
+
+
+export const AddMovieToFavourite = (id, poster, titile) => {
+    return {
+        type: ADD_MOVIE_TO_FAVOURITE,
+        id, poster, titile
     }
 }
