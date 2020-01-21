@@ -58,7 +58,7 @@ color:#fff;
 
 
 
-export const MovieItemHeader = ({ data }) => {
+export const MovieItemHeader = ({ data, addTofavourite }) => {
     const historyBack = () => {
         window.history.back();
     }
@@ -85,7 +85,7 @@ export const MovieItemHeader = ({ data }) => {
 
                     </MovieDetailsContainer>
                     <Animated animationIn="bounceInRight" >
-                        <HeartIcon className="fas fa-heart"></HeartIcon>
+                        <HeartIcon onClick={addTofavourite} className="fas fa-heart"></HeartIcon>
                     </Animated>
                 </HeaderContentBottom>
             </HeaderContent>
