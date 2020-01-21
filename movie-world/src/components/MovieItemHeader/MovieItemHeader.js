@@ -34,12 +34,20 @@ justify-content:space-between;
 align-items:flex-end;
 `
 
-const HeartIcon = Styled.i`
+const HeartIconWhite = Styled.i`
 color:#fff;
 font-size:60px;
 cursor: pointer;
 &:hover{
     color:#ca2e2e;
+}
+`
+const HeartIconRed = Styled.i`
+color:#ca2e2e;
+font-size:60px;
+cursor: pointer;
+&:hover{
+  color:#fff;
 }
 `
 const MoviePoster = Styled.img`
@@ -59,13 +67,31 @@ color:#fff;
 
 
 class MovieItemHeader extends Component {
+    state = {
+        isClick: false
+    }
+
     historyBack = () => {
         window.history.back();
     }
 
     handleAdd = () => {
-        this.props.AddMovieToFavourite(this.props.data.id, this.props.data.poster_path, this.props.data.original_title)
-        console.log(this.props.AddMovieToFavourite(this.props.data.id, this.props.data.poster_path, this.props.data.original_title))
+        this.setState({
+            isClick: !this.state.isClick,
+
+        })
+        if (this.state.isClick) {
+            this.props.AddMovieToFavourite(this.props.data.id, this.props.data.poster_path, this.props.data.original_title)
+            console.log(this.props.AddMovieToFavourite(this.props.data.id, this.props.data.poster_path, this.props.data.original_title))
+
+        } else {
+            this.props.DeleteMovieFormFavourite(this.props.data.id)
+            console.log(this.props.DeleteMovieFormFavourite(this.props.data.id))
+
+        }
+        console.log(this.state.isClick)
+
+
     }
     render() {
 
@@ -95,7 +121,12 @@ class MovieItemHeader extends Component {
 
                         </MovieDetailsContainer>
                         <Animated animationIn="bounceInRight" >
-                            <HeartIcon onClick={() => this.handleAdd()} className="fas fa-heart"></HeartIcon>
+                            {this.state.isClick ?
+                                <HeartIconRed onClick={() => this.handleAdd()} className="fas fa-heart"></HeartIconRed>
+
+                                : <HeartIconWhite onClick={() => this.handleAdd()} className="fas fa-heart"></HeartIconWhite>
+                            }
+
                         </Animated>
                     </HeaderContentBottom>
                 </HeaderContent>
