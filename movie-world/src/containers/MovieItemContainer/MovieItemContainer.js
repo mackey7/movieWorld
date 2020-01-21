@@ -3,7 +3,7 @@ import MovieItemHeader from '../../components/MovieItemHeader/MovieItemHeader'
 import { MovieItemSummary } from '../../components/MovieItemSummary/MovieItemSummary'
 import { MovieItemCast } from '../../components/MovieItemCast/MovieItemCast'
 import { MovieItemTrailers } from '../../components/MovieItemTrailers/MovieItemTrailers'
-import { fetchMovieItem, fetchMovieCredits, fetchVideosAddedToMovie } from '../../actions/movies'
+import { fetchMovieItem, fetchMovieCredits, fetchVideosAddedToMovie, AddMovieToFavourite } from '../../actions/movies'
 import { connect } from "react-redux";
 class MovieItemContainer extends Component {
     componentDidMount() {
@@ -16,7 +16,7 @@ class MovieItemContainer extends Component {
         return (
 
             < div >
-                <MovieItemHeader data={this.props.movie_item} />
+                <MovieItemHeader data={this.props.movie_item} AddMovieToFavourite={this.props.AddMovieToFavourite} />
                 <MovieItemSummary summary={this.props.movie_item.overview} />
                 {/* <MovieItemCast data={this.props.movie_credits.cast} indexOfSwiper={6} /> */}
                 <MovieItemTrailers data={this.props.videos_added_to_movie.results} />
@@ -30,7 +30,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchMovieItem: (movie_id) => dispatch(fetchMovieItem(movie_id)),
         fetchMovieCredits: (movie_id) => dispatch(fetchMovieCredits(movie_id)),
-        fetchVideosAddedToMovie: (movie_id) => dispatch(fetchVideosAddedToMovie(movie_id))
+        fetchVideosAddedToMovie: (movie_id) => dispatch(fetchVideosAddedToMovie(movie_id)),
+        AddMovieToFavourite: (id, poster, title) => dispatch(AddMovieToFavourite(id, poster, title))
+
 
 
     }

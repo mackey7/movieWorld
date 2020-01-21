@@ -64,7 +64,8 @@ class MovieItemHeader extends Component {
     }
 
     handleAdd = () => {
-        // addTofavourite(this.props.data.id)
+        this.props.AddMovieToFavourite(this.props.data.id, this.props.data.poster_path, this.props.data.original_title)
+        console.log(this.props.AddMovieToFavourite(this.props.data.id, this.props.data.poster_path, this.props.data.original_title))
     }
     render() {
 
