@@ -8,6 +8,11 @@ class SearchContainer extends Component {
         this.props.fetchSerachingKeyword(this.props.UrlId);
 
     }
+    componentDidUpdate(prevProps) {
+        if (this.props.UrlId !== prevProps.UrlId) {
+            this.props.fetchSerachingKeyword(this.props.UrlId);
+        }
+    }
     render() {
         console.log(this.props.search_video)
         return (

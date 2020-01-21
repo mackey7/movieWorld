@@ -42,7 +42,7 @@ class SearchBar extends Component {
             <form>
                 <label for="search"></label>
                 <Input type="text" name="search" id="search" value={this.state.searchValue} onChange={this.handleChange} />
-                <Link to={`/search/${this.state.searchValue}`} onClick={this.reload} >
+                <Link to={`/search/${this.state.searchValue}`}  >
                     <Button  >
                         <i className="fas fa-search">
                         </i>
