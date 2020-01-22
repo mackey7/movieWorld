@@ -13,7 +13,7 @@ const initial = {
         id: 496243,
         poster: "/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
         titile: "기생충"
-    }]
+    },]
 
 
 }
@@ -45,7 +45,7 @@ const moviesReducer = (state = initial, actions) => {
             return { ...state, search_video: actions.payload }
         }
         case ADD_MOVIE_TO_FAVOURITE: {
-            return { ...state, favourite_movies: [actions.id, actions.poster, actions.titile] }
+            return { ...state, favourite_movies: [...state.favourite_movies, actions.payload] };
         }
         case DELETE_MOVIE_FROM_FAVOURITE: {
             const sorted = state.favourite_movies.filter(item => item.id !== actions.id)

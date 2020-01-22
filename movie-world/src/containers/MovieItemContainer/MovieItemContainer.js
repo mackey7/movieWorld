@@ -31,7 +31,7 @@ const mapDispatchToProps = (dispatch) => {
         fetchMovieItem: (movie_id) => dispatch(fetchMovieItem(movie_id)),
         fetchMovieCredits: (movie_id) => dispatch(fetchMovieCredits(movie_id)),
         fetchVideosAddedToMovie: (movie_id) => dispatch(fetchVideosAddedToMovie(movie_id)),
-        AddMovieToFavourite: (id, poster, title) => dispatch(AddMovieToFavourite(id, poster, title)),
+        AddMovieToFavourite: (favouriteObject) => dispatch(AddMovieToFavourite(favouriteObject)),
         DeleteMovieFromFavourite: (id) => dispatch(DeleteMovieFromFavourite(id))
 
     }

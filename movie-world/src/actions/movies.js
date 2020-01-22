@@ -158,11 +158,11 @@ export const fetchSerachingKeywordSuccess = (payload) => {
 }
 
 
-export const AddMovieToFavourite = (id, poster, titile) => {
+export const AddMovieToFavourite = (favouriteObject) => {
     return {
         type: ADD_MOVIE_TO_FAVOURITE,
-        id, poster, titile
-    }
+        payload: favouriteObject
+    };
 }
 export const DeleteMovieFromFavourite = (id) => {
     return {
