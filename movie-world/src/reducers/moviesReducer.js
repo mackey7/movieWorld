@@ -9,7 +9,11 @@ const initial = {
     movie_credits: [],
     videos_added_to_movie: [],
     search_video: [],
-    favourite_movies: []
+    favourite_movies: [{
+        id: 496243,
+        poster: "/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+        titile: "기생충"
+    }]
 
 
 }
