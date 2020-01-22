@@ -26,7 +26,7 @@ padding:10px;
 font-weight:100;
 
 `
-export const FavouritePageContent = () => {
+export const FavouritePageContent = ({ data }) => {
     return (
         <Wrapper>
             <ScrollAnimation animateIn="fadeInDownBig" animateOnce={true}>
