@@ -1,12 +1,12 @@
 import React from "react"
 import { TopNav } from '../../components/TopNav/TopNav'
 import { Footer } from '../../components/Footer/Footer'
-import { FavouritePageContent } from '../../components/FavouritePageContent/FavouritePageContent'
+import { FavouritePageContentContainer } from '../../containers/FavouritePageContentContainer/FavouritePageContentContainer'
 export const Favourite = () => {
     return (
         <div>
             <TopNav />
-            <FavouritePageContent />
+            <FavouritePageContentContainer />
             <Footer />
         </div>
     )
