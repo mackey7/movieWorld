@@ -8,7 +8,7 @@ export const HomePage = () => {
     return (
         <div>
             <TopNav />
-            {/* <HeaderSliderContainer indexOfSwiper={10} /> */}
+            <HeaderSliderContainer />
             <HomePageCategories />
             <Footer />
 

@@ -15,6 +15,7 @@ const SliderWrapper = Styled.div`
     font-size:24px;
     font-weight:700;
     max-width:80%;
+    
 `
 
 const CategoryName = Styled.span`
@@ -59,7 +60,7 @@ class CategorySlider extends React.Component {
                         {this.props.data !== undefined && this.props.data.length > 0 ? (
                             this.props.data.map((item, key) => {
                                 return (
-                                    <div key={key} className="swiper-slide">
+                                    <div key={key} >
                                         <CategorySliderFilmItem
                                             src={item.poster_path}
                                             category={item.media_type}

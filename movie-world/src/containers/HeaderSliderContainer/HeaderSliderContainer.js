@@ -1,11 +1,13 @@
 import React from 'react';
-import Swiper from 'swiper';
-import 'swiper/css/swiper.css'
-import '../../styles/carousel.scss'
 import { fetchUpcomingMovies } from '../../actions/movies'
 import { connect } from "react-redux";
 import Styled from 'styled-components'
 import { Slide } from '../../components/Header/Slide'
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 const Loader = Styled.div`
     margin:0 auto;
     color:#e1e1e1;
@@ -13,62 +15,47 @@ const Loader = Styled.div`
     font-weight:100;
 `
 
+const Wrapper = Styled.header`
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+  
 
+`
 class HeaderSlidderContainer extends React.Component {
     componentDidMount() {
         this.props.fetchUpcomingMovies();
     }
     render() {
-        (() => {
-            const sliderEl = document.querySelector('.home-swiper-container');
-            if (!sliderEl) {
-                return;
-            }
-            const slider = new Swiper(sliderEl, {
-                slidesPerView: 1,
-                loop: true,
-                spaceBetween: 0,
-                observer: true,
-
-                autoplay: {
-                    delay: 10000,
-                },
-
-                pagination: {
-                    el: '.home-swiper-pagination',
-                    type: 'progressbar',
-                },
-                navigation: {
-                    nextEl: '.home-swiper-button-next',
-                    prevEl: '.home-swiper-button-prev',
-                }
-            });
-        })();
+        const settings = {
+            dots: false,
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            speed: 2000,
+            autoplaySpeed: 2000,
+            cssEase: "linear"
+        };
         return (
-            <div className="carousel-container" >
-                <div className="swiper-container">
-                    <div className="swiper-wrapper">
-                        {this.props.upcoming_movies.results !== undefined && this.props.upcoming_movies.results.length > 0 ? (
-                            this.props.upcoming_movies.results.slice(0, 3).map((item, key) => {
-                                return (
-                                    <div key={key} className="swiper-slide">
-                                        <Slide img={item.backdrop_path} title={item.title} />
-                                        {console.log(item.backdrop_path)}
-                                    </div>
-                                );
-                            })
-                        ) : (
-                                <Loader>Loading...</Loader>
-                            )}
-                    </div>
-                </div>
-                <div
-                    className={`swiper-button-prev${this.props.indexOfSwiper}`}
-                ></div>
-                <div
-                    className={`swiper-button-next${this.props.indexOfSwiper}`}
-                ></div>
-            </div>
+            <Wrapper>
+                <Slider {...settings}>
+
+                    {this.props.upcoming_movies.results !== undefined && this.props.upcoming_movies.results.length > 0 ? (
+                        this.props.upcoming_movies.results.slice(0, 3).map((item, key) => {
+                            return (
+
+                                <Slide key={key} img={item.backdrop_path} title={item.title} />
+
+                            );
+                        })
+                    ) : (
+                            <Loader>Loading...</Loader>
+                        )}
+
+                </Slider >
+            </Wrapper>
 
         );
     }

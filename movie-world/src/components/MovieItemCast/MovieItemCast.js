@@ -3,7 +3,7 @@ import Styled from 'styled-components'
 import ScrollAnimation from 'react-animate-on-scroll';
 import Swiper from 'swiper';
 import 'swiper/css/swiper.css'
-import '../../styles/carousel.scss'
+
 
 
 const Title = Styled.h2`
