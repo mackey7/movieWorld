@@ -18,7 +18,7 @@ class MovieItemContainer extends Component {
             < div >
                 <MovieItemHeader data={this.props.movie_item} AddMovieToFavourite={this.props.AddMovieToFavourite} DeleteMovieFromFavourite={this.props.DeleteMovieFromFavourite} />
                 <MovieItemSummary summary={this.props.movie_item.overview} />
-                {/* <MovieItemCast data={this.props.movie_credits.cast} indexOfSwiper={6} /> */}
+                <MovieItemCast data={this.props.movie_credits.cast} />
                 <MovieItemTrailers data={this.props.videos_added_to_movie.results} />
 
             </div >

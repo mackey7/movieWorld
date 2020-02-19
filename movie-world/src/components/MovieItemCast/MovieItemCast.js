@@ -1,9 +1,9 @@
 import React from 'react'
 import Styled from 'styled-components'
 import ScrollAnimation from 'react-animate-on-scroll';
-import Swiper from 'swiper';
-import 'swiper/css/swiper.css'
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 const Title = Styled.h2`
@@ -20,19 +20,7 @@ const Wrapper = Styled.div`
 width:80%;
 margin:0 auto;
 `
-const CaruselWrapper = Styled.section`
-display:flex;
-justify-content:space-between;
-align-items:center;
-`
-const CaruselSection = Styled.div`
-display:flex;
-`
-const Icon = Styled.i`
-color:#007aff;
-font-size:40px;
-cursor:pointer;
-`
+
 const MovieItem = Styled.div`
 display:flex;
 flex-direction:column;
@@ -48,89 +36,60 @@ span{
     opacity:1;
 }
 `
-const Img = Styled.img`
-width:100px;
-border-radius:30px;
+
+const Item = Styled.div`
+width: 200px;
+height: 300px;
 `
 
 export const MovieItemCast = ({ data, indexOfSwiper }) => {
-    (() => {
-        const sliderEl = document.querySelectorAll(".swiper-container");
-
-        sliderEl.forEach((slides, index) => {
-            const slider = new Swiper(slides, {
-                init: true,
-                loop: true,
-                spaceBetween: 10,
-                observer: true,
-
-                breakpoints: {
-                    1145: {
-                        slidesPerView: 8
-                    },
-                    699: {
-                        slidesPerView: 3
-                    }
-                },
-                navigation: {
-                    nextEl: `.swiper-button-next${index}`,
-                    prevEl: `.swiper-button-prev${index}`
-                }
-            });
-        });
-    })();
+    var settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 8,
+        slidesToScroll: 1
+    };
     return (
         <WrapperSection>
             <Wrapper>
                 <ScrollAnimation animateIn="bounceInLeft" animateOnce={true}>
                     <Title>Cast</Title>
                 </ScrollAnimation>
-                <CaruselWrapper>
-                    <ScrollAnimation animateIn="fadeInLeft" animateOnce={true} delay={1} >
-                        <Icon className="fas fa-chevron-left"></Icon>
-                    </ScrollAnimation>
-                    <CaruselSection>
-                        {console.log(data)}
-                        {data ?
-                            <div className="swiper-container">
 
-                                <div className="swiper-wrapper">
-                                    {data.map((person, i) => {
+                <ScrollAnimation animateIn="bounceInLeft" animateOnce={true}>
 
-                                        return (
-                                            <div key={person.id} className="swiper-slide">
+                    {data ?
+                        <Slider {...settings}>
 
-                                                <img className="swiper-slide__image" src={`https://image.tmdb.org/t/p/w154/${person.profile_path}`} alt={person.name} />
-                                                <h3 className="swiper-slide__title">{person.name}</h3>
+                            {data.map((person, i) => {
 
-                                            </div>
-                                        );
+                                return (
+                                    <MovieItem key={person.id} >
 
-                                    })}
+                                        <img className="swiper-slide__image" src={`https://image.tmdb.org/t/p/w154/${person.profile_path}`} alt={person.name} />
+                                        <h3 className="swiper-slide__title">{person.name}</h3>
+
+                                    </MovieItem >
+                                );
+
+                            })}
 
 
-                                </div>
+                        </Slider >
 
-                                <div
-                                    className={`swiper-button-prev${indexOfSwiper}`}
-                                ></div>
-                                <div
-                                    className={`swiper-button-next${indexOfSwiper}`}
-                                ></div>
-                            </div>
-                            :
-                            <p className="people-carousel-container-error">No cast found :(</p>
-                        }
+
+                        :
+                        <p >No cast found :(</p>
+                    }
+
+
+                </ScrollAnimation>
 
 
 
 
-                    </CaruselSection>
-                    <ScrollAnimation animateIn="fadeInRight" animateOnce={true} delay={1} >
-                        <Icon className="fas fa-chevron-right"></Icon>
-                    </ScrollAnimation>
-                </CaruselWrapper>
-            </Wrapper>
-        </WrapperSection>
+            </Wrapper >
+        </WrapperSection >
     )
 }

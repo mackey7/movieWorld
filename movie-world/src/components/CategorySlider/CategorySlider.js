@@ -47,8 +47,8 @@ class CategorySlider extends React.Component {
             slidesToShow: 7,
             slidesToScroll: 1,
             autoplay: true,
-            speed: 4000,
-            autoplaySpeed: 2000,
+            speed: 500,
+            autoplaySpeed: 1000,
             cssEase: "linear"
         };
         return (

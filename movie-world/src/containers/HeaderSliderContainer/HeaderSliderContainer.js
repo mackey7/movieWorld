@@ -36,7 +36,10 @@ class HeaderSlidderContainer extends React.Component {
             autoplay: true,
             speed: 2000,
             autoplaySpeed: 2000,
-            cssEase: "linear"
+            cssEase: "linear",
+            nextArrow: null,
+            prevArrow: null,
+            arrows: false
         };
         return (
             <Wrapper>

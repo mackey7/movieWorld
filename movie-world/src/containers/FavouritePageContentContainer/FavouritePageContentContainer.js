@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 class FavouritePageContentContainer extends Component {
 
     render() {
-        console.log(this.props.favourite_movies)
         return (
 
             <FavouritePageContent data={this.props.favourite_movies} />
