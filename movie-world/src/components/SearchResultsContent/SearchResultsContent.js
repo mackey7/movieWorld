@@ -26,7 +26,12 @@ const Content = Styled.div`
     flex-wrap:wrap;
     width:80%;
 `
-
+const Result = Styled.div`
+text-align:center;
+color:#fff;
+font-size:30px;
+margin:0 auto;
+`
 export const SearchResultsContent = ({ url, data }) => {
     console.log(data)
     return (
@@ -34,20 +39,14 @@ export const SearchResultsContent = ({ url, data }) => {
             <PageTitle> Search results for {url} </PageTitle>
             <Content>
                 {
-                    data ?
+                    data.length > 0 ?
                         data.map((item, key) =>
                             <div>
                                 <SearchResultsItem key={key} id={item.id} title={item.original_title} src={item.poster_path} />
-
-
                             </div>
-
-
-
-
                         )
                         :
-                        <div> NO RESLUTS</div>
+                        <Result> NO RESLUTS</Result>
                 }
 
             </Content>
@@ -58,9 +57,3 @@ export const SearchResultsContent = ({ url, data }) => {
 }
 
 
-// const SliderWrapper = Styled.div`
-//    
-//     font-size:24px;
-//     font-weight:700;
-//     max-width:80%;
-// `
