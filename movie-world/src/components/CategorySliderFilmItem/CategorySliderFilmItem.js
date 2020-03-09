@@ -14,7 +14,7 @@ const Wrapper = Styled.div`
     flex-direction:column;
     cursor:pointer;
     margin: 0px 20px;
-       filter: brightness(50%);
+       filter: brightness(70%);
         &:hover{
         filter: brightness(100%);   
       transform:scale(1.1);

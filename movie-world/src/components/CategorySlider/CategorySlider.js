@@ -15,14 +15,14 @@ const SliderWrapper = Styled.div`
     font-size:24px;
     font-weight:700;
     max-width:80%;
-    
 `
 
-const CategoryName = Styled.span`
+const CategoryName = Styled.h3`
     text-transform:uppercase;  
      color:#e1e1e1;
     font-weight:100;
     letter-spacing:2px;
+    margin:25px;
 `
 const Loader = Styled.div`
     margin:0 auto;
