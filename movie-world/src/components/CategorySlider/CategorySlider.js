@@ -43,7 +43,7 @@ class CategorySlider extends React.Component {
     render() {
         const settings = {
             dots: false,
-            infinite: false,
+            infinite: true,
             slidesToShow: 7,
             slidesToScroll: 1,
             autoplay: true,
