@@ -30,7 +30,7 @@ class HeaderSlidderContainer extends React.Component {
     render() {
         const settings = {
             dots: false,
-            infinite: false,
+            infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
