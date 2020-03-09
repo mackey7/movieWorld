@@ -3,9 +3,10 @@ import Styled from 'styled-components'
 
 
 const Image = Styled.img`
-    max-height:50%;
-    height:700px;
+    max-height:70vh;
+    height:100%;
     width:100%;
+    max-width:200%
     margin:0;
     padding:0;
 `
